@@ -45,6 +45,7 @@
 
 (deftest filled-diamond-n
   (testing "A filled diamond of size n(at its widest)"
+    (is (= [] (filled-diamond "*" 0)))
     (is (= ["*"] (filled-diamond "*" 1)))
     (is (= [" *" "***" " *"] (filled-diamond "*" 3)))
     (is (= ["  *" " ***" "*****" " ***" "  *"] (filled-diamond "*" 5)))))

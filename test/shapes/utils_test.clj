@@ -29,4 +29,7 @@
     (is (= [0 -1 0] (there-and-back 0 -1 -1)))
     (is (= [1 0 -1 0 1] (there-and-back 1 -1 -1)))
     (is (= [0 -2 -4 -2 0] (there-and-back 0 -4 -2)))
-    (is (= 0 (first (there-and-back 1000000000000000N))))))
+    (is (= 0 (first (there-and-back 1000000000000000N))))
+    (is (= [] (there-and-back 1 0)))
+    (is (= [] (there-and-back 0 1 -1)))
+    (is (= [0] (there-and-back 0)))))
