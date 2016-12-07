@@ -24,6 +24,11 @@
   [c m n]
   (take m (map (partial (flip line) n) (cycle c))))
 
+(defn left-aligned-triangle
+  "Creates a left aligned triangle of dimension n with char c"
+  [c n]
+  (map (partial line c) (range 1 (inc n))))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
