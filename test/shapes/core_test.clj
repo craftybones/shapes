@@ -49,3 +49,10 @@
     (is (= ["*"] (filled-diamond "*" 1)))
     (is (= [" *" "***" " *"] (filled-diamond "*" 3)))
     (is (= ["  *" " ***" "*****" " ***" "  *"] (filled-diamond "*" 5)))))
+
+(deftest hollow-diamond-n
+  (testing "A filled diamond of size n(at its widest)"
+    (is (= [] (hollow-diamond "*" 0)))
+    (is (= ["*"] (hollow-diamond "*" 1)))
+    (is (= [" *" "* *" " *"] (hollow-diamond "*" 3)))
+    (is (= ["  *" " * *" "*   *" " * *" "  *"] (hollow-diamond "*" 5)))))
