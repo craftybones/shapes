@@ -19,6 +19,11 @@
      (repeat (- m 2) (bordered-line c n))
      (line c n))))
 
+(defn alternating-rectangle
+  "Creates an mxn rectangle alternated with the elements of c"
+  [c m n]
+  (take m (map (partial (flip line) n) (cycle c))))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]

@@ -19,3 +19,10 @@
       (is (= ["*" "*"] (star-hollow-rectangle 2 1)))
       (is (= ["***","* *","***"] (star-hollow-rectangle 3 3))))))
 
+(deftest alternating-rectangle-m-x-n
+  (testing "A simple mxn rectangle alternating with * and -"
+    (is (= ["*"] (alternating-rectangle ["*" "-"] 1 1)))
+    (is (= ["*","-"] (alternating-rectangle ["*" "-"] 2 1)))
+    (is (= ["***","---"] (alternating-rectangle ["*" "-"] 2 3)))
+    (is (= ["***","---", "***"] (alternating-rectangle ["*" "-"] 3 3)))))
+
