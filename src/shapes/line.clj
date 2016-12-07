@@ -10,8 +10,9 @@
   "creates a string of spaces"
   (partial line " "))
 
-(defn bordered-line [c n]
+(defn bordered-line 
   "creates a string of two c's separated by n-2 spaces"
+  [c n]
   (condp = n
     0 ""
     1 c
