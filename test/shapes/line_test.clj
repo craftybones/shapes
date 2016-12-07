@@ -17,3 +17,12 @@
       (is (= "*" (bordered-star-line 1)))
       (is (= "**" (bordered-star-line 2)))
       (is (= "* *" (bordered-star-line 3))))))
+
+(deftest right-justify-test
+  (testing "Right justifying strings"
+    (is (= "*" (right-justify 0 "*")))
+    (is (= "*" (right-justify 1 "*")))
+    (is (= " *" (right-justify 2 "*")))
+    (is (= "  *" (right-justify 3 "*")))
+    (is (= "**" (right-justify 2 "**")))
+    (is (= " **" (right-justify 3 "**")))))

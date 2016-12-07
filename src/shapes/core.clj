@@ -29,6 +29,11 @@
   [c n]
   (map (partial line c) (range 1 (inc n))))
 
+(defn right-aligned-triangle
+  "Creates a right aligned triangle of dimension n with char c"
+  [c n]
+  (map (partial right-justify n) (left-aligned-triangle c n)))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]

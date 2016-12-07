@@ -34,3 +34,11 @@
       (is (= ["*"] (star-left-triangle 1)))
       (is (= ["*" "**"] (star-left-triangle 2)))
       (is (= ["*" "**", "***"] (star-left-triangle 3))))))
+
+(deftest right-aligned-triangle-nxn
+  (let [star-right-triangle (partial right-aligned-triangle "*")]
+    (testing "A simple right aligned triangle of dimension n"
+      (is (= [] (star-right-triangle 0)))
+      (is (= ["*"] (star-right-triangle 1)))
+      (is (= [" *" "**"] (star-right-triangle 2)))
+      (is (= ["  *" " **", "***"] (star-right-triangle 3))))))

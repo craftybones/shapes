@@ -17,3 +17,8 @@
     0 ""
     1 c
     (str c (empty-line (- n 2)) c)))
+
+(defn right-justify
+  "Right justifies the string s with a maximum length of n"
+  [n s]
+  (str (empty-line (- n (count s))) s))
