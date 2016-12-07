@@ -22,10 +22,10 @@
 (deftest alternating-rectangle-m-x-n
   (let [star-minus-rectangle (partial alternating-rectangle ["*" "-"])]
     (testing "A simple mxn rectangle alternating with * and -"
-            (is (= ["*"] (star-minus-rectangle 1 1)))
-            (is (= ["*","-"] (star-minus-rectangle 2 1)))
-            (is (= ["***","---"] (star-minus-rectangle 2 3)))
-            (is (= ["***","---", "***"] (star-minus-rectangle 3 3))))))
+      (is (= ["*"] (star-minus-rectangle 1 1)))
+      (is (= ["*","-"] (star-minus-rectangle 2 1)))
+      (is (= ["***","---"] (star-minus-rectangle 2 3)))
+      (is (= ["***","---", "***"] (star-minus-rectangle 3 3))))))
 
 (deftest left-aligned-triangle-nxn
   (let [star-left-triangle (partial left-aligned-triangle "*")]
