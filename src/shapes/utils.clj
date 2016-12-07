@@ -14,3 +14,8 @@
 (def repeat-string
   "Strings up elements that can be repeated n times"
   (comp stringify repeat))
+
+(defn flatten*
+  "treats all arguments to it as one large list and flattens"
+  [& args]
+  (flatten args))

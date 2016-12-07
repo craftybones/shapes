@@ -11,4 +11,11 @@
       (is (= ["**","**"] (star-filled-rectangle 2 2)))
       (is (= ["***","***"] (star-filled-rectangle 2 3))))))
 
-;; (deftest hollow-rectangle-m-x-n)
+(deftest hollow-rectangle-m-x-n
+  (let [star-hollow-rectangle (partial hollow-rectangle "*")]
+    (testing "A simple mxn star hollow rectangle"
+      (is (= [] (star-hollow-rectangle 0 1)))
+      (is (= ["*"] (star-hollow-rectangle 1 1)))
+      (is (= ["*" "*"] (star-hollow-rectangle 2 1)))
+      (is (= ["***","* *","***"] (star-hollow-rectangle 3 3))))))
+
