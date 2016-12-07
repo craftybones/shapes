@@ -34,6 +34,14 @@
   [c n]
   (map (partial right-justify n) (left-aligned-triangle c n)))
 
+;; Need to bail out on even numbered values
+(defn filled-diamond
+  "Creates a diamond of size n(at its widest) filled with c"
+  [c n]
+  (let [center-justified-line (comp (partial center-justify n)
+                                    (partial line c))]
+    (map center-justified-line (there-and-back 1 n 2))))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]

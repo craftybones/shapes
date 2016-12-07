@@ -22,3 +22,8 @@
   "Right justifies the string s with a maximum length of n"
   [n s]
   (str (empty-line (- n (count s))) s))
+
+(defn center-justify
+  "Center justifies the string s with a maximum length of n"
+  [n s]
+  (str (empty-line (quot (- n (count s)) 2)) s))
