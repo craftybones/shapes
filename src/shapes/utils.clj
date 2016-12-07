@@ -20,13 +20,6 @@
   [& args]
   (flatten args))
 
-(defn abs> [x y]
-  (> (Math/abs x) (Math/abs y)))
-
-(defn abs< [x y]
-  (< (Math/abs x) (Math/abs y)))
-
-
 (defn there-and-back
   "creates a range that ranges from start to end and back to start"
   ([to] (there-and-back 0 to 1))

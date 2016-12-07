@@ -27,4 +27,6 @@
     (is (= [0 1 2 1 0] (there-and-back 0 2)))
     (is (= [1 3 5 3 1] (there-and-back 1 5 2)))
     (is (= [0 -1 0] (there-and-back 0 -1 -1)))
-    (is (= [1 0 -1 0 1] (there-and-back 1 -1 -1)))))
+    (is (= [1 0 -1 0 1] (there-and-back 1 -1 -1)))
+    (is (= [0 -2 -4 -2 0] (there-and-back 0 -4 -2)))
+    (is (= 0 (first (there-and-back 1000000000000000N))))))
