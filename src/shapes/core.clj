@@ -34,14 +34,15 @@
   [c n]
   (map (partial right-justify n) (left-aligned-triangle c n)))
 
-;; Need to bail out on even numbered values
 (defn -diamond
   "Creates a diamond of size n(at its widest) made with the line
   generator specified by l"
   [c n l]
-  (let [center-justified-line (comp (partial center-justify n)
-                                    (partial l c))]
-    (map center-justified-line (there-and-back 1 n 2))))
+  (if (even? n)
+    '()
+    (let [center-justified-line (comp (partial center-justify n)
+                                      (partial l c))]
+      (map center-justified-line (there-and-back 1 n 2)))))
 
 (defn filled-diamond
   "Creates a filled diamond of size n(at its widest)"
