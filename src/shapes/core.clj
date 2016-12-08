@@ -36,13 +36,12 @@
 
 (defn -diamond
   "Creates a diamond of size n(at its widest) made with the line
-  generator specified by l"
+  generator specified by l made up with c"
   [c n l]
   (if (even? n)
     '()
-    (let [center-justified-line (comp (partial center-justify n)
-                                      (partial l c))]
-      (map center-justified-line (there-and-back 1 n 2)))))
+    (let [justified (justified-line-of center-justify n l c)]
+      (map justified (there-and-back 1 n 2)))))
 
 (defn filled-diamond
   "Creates a filled diamond of size n(at its widest)"
