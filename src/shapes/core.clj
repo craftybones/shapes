@@ -8,16 +8,16 @@
   [c m n]
   (repeat m (line c n)))
 
+(def top-and-middle-lines
+  "juxtaposes two line generators"
+  (juxt line bordered-line))
+
 (defn hollow-rectangle
   "Creates a hollow rectangle of mxn dimentions bordered by c"
   [c m n]
-  (condp = m
-    0 '()
-    1 (list (line c n))
-    (flatten*
-     (line c n)
-     (repeat (- m 2) (bordered-line c n))
-     (line c n))))
+  (let [[fl ml] (top-and-middle-lines c n)
+        rep (partial repeat (- m 2))]
+    (take m (flatten* fl (rep ml) fl))))
 
 (defn alternating-rectangle
   "Creates an mxn rectangle alternated with the elements of c"
